@@ -1,8 +1,9 @@
 %Trying fft 
 
 Fs = 1000;            % Sampling frequency                    
-T = 1/Fs;             % Sampling period       
-dt = 0:T:2-T  ;    %Signal Strength 
+T = 1/Fs;             % Sampling period     
+t = 2 ;               %Time sampled , t 
+dt = 0:T:t-T ;        %Signal Strength 
 
 f1 = 10 ; 
 f2 = 30 ; 
@@ -19,9 +20,14 @@ y3 = 30*sin(2*pi*f3*dt) ;
 % subplot(325) ; 
 % plot(dt, y3 , 'y') ; 
 
+
 y4 = y1 + y2 + y3 ; 
 % subplot(324) ;
 X = fft(y4) ; 
 X_absolute = abs(X) ; 
-% plot(X_absolute)
-plot(X_absolute/(2000)) 
+
+%Number of Samples, k 
+k = Fs*t ; 
+plot(X_absolute/(0.5*k)) 
+
+
