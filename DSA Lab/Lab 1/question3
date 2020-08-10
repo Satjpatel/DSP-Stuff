@@ -1,0 +1,14 @@
+%Sat Patel
+% U18EC105
+% Question 3 : Find the solution of the following set of linear algebraic equations
+%  using matrix method
+syms x y z
+eqn1 = 5*x + 6*y + 10*z == 4;
+eqn2 = -3*x + 0*y - 14*z == 10;
+eqn3 = 0*x - 7*y + 21*z == 0;
+
+sol = solve([eqn1, eqn2, eqn3], [x, y, z]);
+
+SolForx = sol.x; % Solving for x 
+SolFory = sol.y; % Solving for y 
+SolForz = sol.z; % Solving for z 
