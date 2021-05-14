@@ -1,0 +1,65 @@
+%Sat Patel 
+%U18EC105 
+%Question 1: Plot  the  basic  discrete-time  sequences like   Unit   Impulse,  
+% Unit  Step,  Unit  Ramp, exponential signals.
+t = -50:50 ;
+y = zeros(1,101);
+y(1,51) = 1;
+subplot(7,1,1);
+stem(t,y);
+xlabel('n');
+ylabel('amp');
+title('Unit Impulse');
+
+a = zeros(1,101);
+a(1,51:101) = 1;
+subplot(7,1,2);
+stem(t,a);
+xlabel('n');
+ylabel('amp');
+title('Unit Step');
+
+y = zeros(1,101);
+y(1,52:101) = t(1,52:101)';
+subplot(7,1,3);
+stem(t,y);
+xlabel('n');
+ylabel('amp');
+title('Ramp');
+
+a=0.5;
+y=a.^t;
+subplot(7,1,4);
+stem(t,y);
+xlabel('n');
+ylabel('amp');
+title('exponential');
+
+a=1.5;
+y=a.^t;
+subplot(7,1,5);
+stem(t,y);
+xlabel('n');
+ylabel('amp');
+title('exponential');
+
+a=-0.5;
+y=a.^t;
+subplot(7,1,6);
+stem(t,y);
+xlabel('n');
+ylabel('amp');
+title('exponential');
+
+a=-1.5;
+y=a.^t;
+subplot(7,1,7);
+stem(t,y);
+xlabel('n');
+ylabel('amp');
+title('exponential');
+
+
+
+
+

@@ -1,0 +1,41 @@
+%Sat Patel
+% U18EC105
+%Question 2: Sample  a  signal:  x(t)=  sin(2*pi*F*t), where  F=5  Hz. 
+% Plot  the  sample  number  vs  values. Take the sampling frequencies 50 Hz, 100Hz, 200Hz.
+% Plot all sampled signals on the same figure using subplot command. 
+
+%50Hz sampling
+f = 5;
+T = 1/f;
+dt = 1/50;
+t = 0:dt:10*T;
+x = sin(2*pi*f*t);
+subplot(311)
+stem(t,x);
+xlabel("t");
+ylabel("Amplitude");
+title("50Hz Sampled");
+ 
+%100Hz sampling
+f = 5;
+T = 1/f;
+dt = 1/100;
+t = 0:dt:10*T;
+x = sin(2*pi*f*t);
+subplot(312)
+stem(t,x);
+xlabel("t");
+ylabel("Amplitude");
+title("100Hz Sampled");
+ 
+%200Hz sampling
+f = 5;
+T = 1/f;
+dt = 1/200;
+t = 0:dt:10*T;
+x = sin(2*pi*f*t);
+subplot(313)
+stem(t,x);
+xlabel("t");
+ylabel("Amplitude");
+title("200Hz Sampled")

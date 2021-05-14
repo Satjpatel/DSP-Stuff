@@ -1,0 +1,45 @@
+%Sat Patel 
+%U18EC105 
+%Question 4 - ompute DFT of the sequence [1 1 1 1] using 
+% DFT matrix. Also find the inverse DFT of the  result  to  
+% obtain  original  sequenceusinginverse  DFT  matrix. 
+% Verify  your  results  by comparing  with  the  result 
+% obtained  using  fft  and  ifft  MATLAB  commands. Use  dftmtx 
+% MATLAB command to obtain the DFT matrix. 
+
+
+
+clc;
+clear all;
+close all;
+
+x = [1 1 1 1];
+t= 1:4;
+
+mtrx= dftmtx(4);
+fft1=x*mtrx;
+subplot(221)
+stem(t,fft1);
+xlabel('f');
+ylabel('fft with dfmtx(n)');
+
+
+invsmtrx= inv(mtrx);
+orgn_sq1=fft1*invsmtrx;
+subplot(222)
+stem(t,orgn_sq1);
+xlabel('t');
+ylabel('original sqs');
+
+
+fft2=fft(x);
+subplot(223)
+stem(t,fft2);
+xlabel('f');
+ylabel('fft with fft(n)');
+
+orgn_sq2=ifft(fft2);
+subplot(224)
+stem(t,orgn_sq2);
+xlabel('t');
+ylabel('original_sqs');
